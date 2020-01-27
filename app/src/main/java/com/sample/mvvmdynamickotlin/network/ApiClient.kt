@@ -16,7 +16,7 @@ class ApiClient {
             .addInterceptor(okHttpInterceptor)
             .build()
 
-        fun create(): ApiClient {
+        fun create(): ApiService {
 
             val retrofit = Retrofit.Builder()
                 .client(okHttpClient)
@@ -24,7 +24,7 @@ class ApiClient {
                 .baseUrl("https://api.simplifiedcoding.in/course-apis/mvvm/")
                 .build()
 
-            return retrofit.create(ApiClient::class.java)
+            return retrofit.create(ApiService::class.java)
         }
     }
 }
